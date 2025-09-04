@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import MapView from "./components/MapView";
 import Controls from "./components/Controls";
+import mylogo from "./mylogo.png";  // ✅ add this
+
 
 const FEEDS = {
   hour: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson",
@@ -53,6 +55,12 @@ export default function App() {
   return (
     <div className="app">
       <header className="header">
+        {/* Logo */}
+        <img
+          src={mylogo}
+          alt="My Logo"
+          style={{ width: 40, height: 40, borderRadius: "50%" }}
+        />
         <span className="title">🌍 Earthquake Visualizer</span>
         <div className="controls">
           <Controls
